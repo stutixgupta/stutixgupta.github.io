@@ -1,7 +1,8 @@
-/* =====================================================
+/* ============================================================
    TUTORIAL 7: SAME DATA, DIFFERENT STORIES
    Information architecture through multiple data presentations
-   ===================================================== */
+   ============================================================ */
+
 
 /* ROOT VARIABLES */
 :root {
@@ -25,6 +26,7 @@
     --spacing-xxl: 3rem;
 }
 
+
 /* BASE STYLES */
 * {
     box-sizing: border-box;
@@ -43,6 +45,7 @@ body {
     max-width: 75rem;
     margin: 0 auto;
 }
+
 
 /* HEADER */
 header {
@@ -66,6 +69,7 @@ header p {
     margin: 0;
     opacity: 0.9;
 }
+
 
 /* LOADING SECTION */
 .loading-section {
@@ -145,6 +149,7 @@ header p {
     margin-top: var(--spacing-md);
 }
 
+
 /* VIEW CONTROLS */
 .view-controls {
     background: var(--card-background);
@@ -205,6 +210,7 @@ header p {
     font-size: 0.875rem;
 }
 
+
 /* DISPLAY CONTAINER */
 .display-container {
     background: var(--card-background);
@@ -239,6 +245,7 @@ header p {
     color: var(--text-muted);
     font-style: italic;
 }
+
 
 /* CARD VIEW */
 .card-grid {
@@ -316,6 +323,7 @@ header p {
     margin-top: var(--spacing-sm);
 }
 
+
 /* TABLE VIEW */
 .table-container {
     overflow-x: auto;
@@ -388,6 +396,7 @@ header p {
     color: var(--error-color);
 }
 
+
 /* STATS VIEW */
 .stats-grid {
     display: grid;
@@ -453,6 +462,7 @@ header p {
     color: var(--text-muted);
 }
 
+
 /* TUTORIAL INSIGHTS */
 .tutorial-insights {
     background: var(--card-background);
@@ -504,6 +514,7 @@ header p {
     margin-top: 0;
 }
 
+
 /* TUTORIAL INSTRUCTIONS */
 .tutorial-instructions {
     background: var(--card-background);
@@ -527,6 +538,7 @@ header p {
     margin-bottom: var(--spacing-sm);
 }
 
+
 /* UTILITY CLASSES */
 .hidden {
     display: none !important;
@@ -537,6 +549,7 @@ header p {
     50% { opacity: 0.7; }
     100% { opacity: 1; }
 }
+
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 48rem) {
