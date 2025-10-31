@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Views - Framework Approach</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+
+  <body>
+    <div class="container">
+        <header>
+            <h1>One Dataset, Four Presentations</h1>
+            <p><strong>Project:</strong> The same restaurant data, displayed in four different ways. Each presentation emphasizes different aspects of the information and serves different user goals.</p>
+        </header>
+
+
+        <nav class="view-selector">
+            <button class="view-button active" id="btn-cards" data-view="cards">Card View</button>
+            <button class="view-button" id="btn-table" data-view="table">Table View</button>
+            <button class="view-button" id="btn-categories" data-view="categories">Category View</button>
+            <button class="view-button" id="btn-stats" data-view="stats">Statistics View</button>
+        </nav>
+
+
+        <main class="display-container">
+            <div id="data-display">
+                <div class="loading">Loading Restaurant Data...</div>
+            </div>
+        </main>
+
+
+<section class="reflection-box">
+    <h2 class="reflection-header">
+  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNkMjMyNWYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tZXNzYWdlLXNxdWFyZS1xdW90ZS1pY29uIGx1Y2lkZS1tZXNzYWdlLXNxdWFyZS1xdW90ZSI+PHBhdGggZD0iTTE0IDE0YTIgMiAwIDAgMCAyLTJWOGgtMiIvPjxwYXRoIGQ9Ik0yMiAxN2EyIDIgMCAwIDEtMiAySDYuODI4YTIgMiAwIDAgMC0xLjQxNC41ODZsLTIuMjAyIDIuMjAyQS43MS43MSAwIDAgMSAyIDIxLjI4NlY1YTIgMiAwIDAgMSAyLTJoMTZhMiAyIDAgMCAxIDIgMnoiLz48cGF0aCBkPSJNOCAxNGEyIDIgMCAwIDAgMi0yVjhIOCIvPjwvc3ZnPg==" alt="Reflection Icon" class="reflection-icon"> 
+  Reflection
+</h2>
+    <p>
+        For this project, I chose the Restaurant Dataset API because it provides detailed information about restaurants, including their names, locations, ratings, prices, cuisines, and contact information. I thought it would be interesting to explore patterns in food options and pricing across different neighborhoods. Especially as a student, I can't think of anything except food these days, and the second thing that makes me happy is a good night’s sleep.
+    </p>
+    <p>
+        The Card View emphasizes individual restaurants. Each card displays the main details, including name, cuisine, price, and rating. This view is ideal for those who want to browse and compare restaurants quickly. You can see individual restaurants’ information visually without being overwhelmed by numbers or tables.
+    </p>
+    <p>
+        The Table View emphasizes organized data. All restaurants are shown in a structured table format with rows and columns. This view makes it easy to sort, scan, or compare specific details, such as ratings or prices, across many restaurants. It is more practical for finding exact numbers or making detailed comparisons.
+    </p>
+    <p>
+        The Category View groups restaurants by cuisine type. It emphasizes relationships and patterns within the data, showing which types of food are more common, their average ratings, and prices. This view is helpful for spotting trends, such as which cuisine is most common or which types have higher ratings on average.
+    </p>
+    <p>
+        The Statistics View highlights overall patterns and key insights. It displays the total number of restaurants, their average rating and price, the most common cuisine, and the price distribution. This view provides a quick overview of the dataset, helping to identify general trends that are harder to notice in other views, such as the number of restaurants falling under each price range.
+    </p>
+    <p>
+        I believe the Statistics View is the most useful for this dataset because it provides a concise summary of the entire dataset at a glance. If someone wanted to make decisions quickly or understand patterns in pricing, ratings, and cuisine types, this view provides the essential information efficiently.
+    </p>
+    <p>
+        One challenge I encountered was displaying the price distribution in a clear and interactive way. Initially, the data was presented vertically and was difficult to read. I solved it by creating buttons for each price range under the Statistics View, so users can click and immediately see how many restaurants fall into that range. This made the data more readable and interactive without overwhelming the user.
+    </p>
+</section>
+
+
+        <section class="asst-box">
+            <h2 class="assignment-header">
+  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNkMjMyNWYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1wcmVzZW50YXRpb24taWNvbiBsdWNpZGUtcHJlc2VudGF0aW9uIj48cGF0aCBkPSJNMiAzaDIwIi8+PHBhdGggZD0iTTIxIDN2MTFhMiAyIDAgMCAxLTIgMkg1YTIgMiAwIDAgMS0yLTJWMyIvPjxwYXRoIGQ9Im03IDIxIDUtNSA1IDUiLz48L3N2Zz4=" class="view-icon" alt="Assignment Icon">
+  Your Assignment
+</h2>
+            <ol>
+                <li><strong>Choose your API:</strong> Pick from PG County Open Data, NASA, Art Institute, etc.</li>
+                <li><strong>Complete the Four Presentation Functions:</strong> Card Grid, Data Table, Category Groups, and Statistics Summary.</li>
+                <li><strong>Make each view Useful:</strong> What information does each presentation emphasize?</li>
+                <li><strong>Add your own Styling:</strong> Make it visually appealing and easy to use.</li>
+                <li><strong>Write a Reflection:</strong> How does presentation change the meaning of your data?</li>
+            </ol>
+            
+            
+            <h2 class="why-header">
+  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNkMjMyNWYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1ncmlkMngyLWljb24gbHVjaWRlLWdyaWQtMngyIj48cGF0aCBkPSJNMTIgM3YxOCIvPjxwYXRoIGQ9Ik0zIDEyaDE4Ii8+PHJlY3QgeD0iMyIgeT0iMyIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4IiByeD0iMiIvPjwvc3ZnPg==" class="view-icon" alt="Why Icon">
+  Why Four Presentations?
+</h2>
+            <ul>
+                <li><strong>Card View:</strong> Best for browsing and comparing individual items.</li>
+                <li><strong>Table View:</strong> Perfect for scanning specific data points and sorting.</li>
+                <li><strong>Category View:</strong> Emphasizes groupings and relationships.</li>
+                <li><strong>Statistics View:</strong> Highlights patterns and aggregate insights.</li>
+            </ul>
+        </section>
+    </div>
+
+
+    <script type="module" src="./script.js" defer></script>
+</body>
+</html>

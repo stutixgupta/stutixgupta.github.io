@@ -1,0 +1,558 @@
+/* BASE STYLES - Tried my best to make it look Good :) */
+:root {
+    --primary-color: rgb(235, 150, 60);
+    --secondary-color: rgb(210, 50, 95);
+    --background-color: #0f0f10;
+    --card-background: #1b1b1b;
+    --text-color: #ffffff;
+    --subtext-color: #cccccc;
+    --border-color: #333333;
+    --shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 1rem;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    background-image: repeating-linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.03) 0px,
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 0.5px,
+        transparent 10px
+    );
+    line-height: 2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: left;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+}
+
+header h1 {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+header p {
+    color: var(--subtext-color);
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-top: 1.8rem;
+}
+
+.view-selector {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.view-button {
+    flex: 1;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1.5rem 0;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: all 0.2s ease;
+    text-align: center;
+    min-width: 200px;
+}
+
+.view-button:hover {
+    background: #dc6955;
+}
+
+.view-button.active {
+    background: var(--secondary-color);
+    color: #ffffff;
+}
+
+.display-container {
+    background: var(--card-background);
+    border-radius: 10px;
+    padding: 2rem;
+    min-height: 400px;
+    box-shadow: var(--shadow);
+}
+
+.loading {
+    text-align: center;
+    color: #666666;
+    font-style: italic;
+    padding: 2rem;
+}
+
+.error {
+    background: #910a3c;
+    border: 1px solid #910a3c;
+    color: #f05f7d;
+    padding: 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+/* UTILITY CLASSES FOR STUDENTS */
+.view-title {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.view-title:hover {
+    color: #dc6955;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.view-description {
+    color: var(--subtext-color);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.view-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  vertical-align: middle;
+  opacity: 0.9;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.view-title:hover .view-icon {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+
+/* CARD VIEW */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.restaurant-card {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    background: var(--card-background);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-2px);
+    background: #202020;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+}
+
+.card-name {
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    margin-top: 0.4rem;
+}
+
+.restaurant-card:hover .card-name {
+    color: #dc6955;
+    transition: color 0.3s ease;
+}
+
+.card-field {
+    margin: 0.5rem 0;
+    line-height: 2;
+    color: var(--subtext-color);
+    font-size: 0.9rem;
+}
+
+
+/* TABLE VIEW */
+.restaurant-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.restaurant-table th,
+.restaurant-table td {
+    padding: 0.75rem;
+    text-align: center;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    color: #cccccc;
+}
+
+.restaurant-table th:first-child,
+.restaurant-table td:first-child {
+    border-left: 1px solid var(--border-color);
+}
+
+.restaurant-table th {
+    background: #202020;
+    color: #d2325f;
+    font-weight: 500;
+}
+
+.restaurant-table tr:hover {
+    background: #202020;
+    color: #dc6955;
+}
+
+.restaurant-table tbody tr:hover td {
+    color: #dc6955;
+    cursor: pointer;
+}
+
+
+/* CATEGORY VIEW */
+.category-section {
+    margin-bottom: 2.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.category-header {
+    background: var(--secondary-color);
+    color: white;
+    padding: 1.25rem 2rem;
+    margin: 0;
+    border-radius: 10px 10px 0 0;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.category-header:hover {
+    background: #dc6955;
+    cursor: pointer;
+}
+
+.category-subheader {
+    padding: 1.25rem 2rem;
+    padding-left: 1.5rem;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--subtext-color);
+    background: var(--card-background);
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.category-item .location {
+    font-size: 0.9rem;
+    color: var(--subtext-color);
+    display: block;
+    margin-top: 0.3rem;
+}
+
+.category-items {
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+}
+
+.category-item {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #cccccc;
+}
+
+.category-item:last-child {
+    border-bottom: none;
+}
+
+.category-avg {
+    padding: 0.75rem 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    line-height: 1.7rem;
+}
+
+.category-item:hover {
+    background-color: #202020;
+    color: #dc6955;
+    transition: all 0.2s ease;
+}
+
+.category-item:hover .item-name,
+.category-item:hover .item-sub,
+.category-item:hover .item-meta {
+    color: #dc6955;
+}
+ 
+
+/* STATISTICS VIEW */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 2rem;
+    background: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+    max-height: 320px;
+    display: flex;
+    flex-direction: column;
+    line-height: 2.3rem;
+    align-items: center;
+} 
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  background-color: #dc6955;
+}
+
+.stat-number {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0.25rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 0.25rem;
+    width: 120%;
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.8;
+    line-height: 1.7rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+
+/* PRICE DISTRIBUTION */
+.price-distribution {
+    margin-top: 1.8rem;
+    text-align: center;
+    color: var(--subtext-color);
+    font-size: 1rem;
+}
+
+.price-distribution-title {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.price-distribution-title:hover {
+    color: #dc6955;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.range-block {
+  margin-top: 1.8rem;
+}
+
+.range-selector {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 45px;
+}
+
+.range-button {
+  flex: 1;
+  min-width: 140px;
+  padding: 1rem 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.range-result {
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  color: var(--subtext-color);
+}
+
+.range-result .range-count {
+  font-weight: 500;
+  color: var(--secondary-color);
+  margin: 0 0 0.5rem 0;
+}
+
+.range-result .range-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--subtext-color);
+  font-size: 0.9rem;
+  line-height: 2.5;
+}
+
+.range-button.active {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+
+/* FONT-WEIGHT CHANGES */
+.restaurant-card strong,
+.restaurant-card b,
+.restaurant-table strong,
+.restaurant-table b,
+.category-item strong,
+.category-item b,
+.asst-box strong,
+.asst-box b {
+  font-weight: 550;
+}
+
+
+/* REFLECTION */
+.reflection-box {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--card-background);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    line-height: 2;
+    color: #cccccc;
+    box-shadow: var(--shadow);
+}
+
+.reflection-header {
+    text-align: left;
+    font-size: 1.3rem;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: color 0.3s ease;
+}
+
+.reflection-header:hover {
+    color: #dc6955;
+    cursor: pointer;
+}
+
+.reflection-box p {
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.reflection-icon {
+  width: 29px;
+  height: 29px;
+  transition: transform 0.2s ease;
+}
+
+.reflection-header:hover .reflection-icon {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+
+/* ASSIGNMENT */
+.todo-implementation {
+    background: var(--card-background);
+    border: 2px dashed var(--border-color);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    color:  #aaaaaa;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.asst-box {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--card-background);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    line-height: 2.5;
+    color: #cccccc;
+    box-shadow: var(--shadow);
+}
+
+.assignment-header,
+.why-header {
+    text-align: left;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.assignment-header:hover,
+.why-header:hover {
+    color: #dc6955;
+    transition: color 0.3s ease;
+}
+
+.assignment-header:hover .view-icon {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.why-header:hover {
+  color: #dc6955;
+  transition: color 0.3s ease;
+}
+
+.why-header:hover .view-icon {
+  transform: scale(1.2);
+  opacity: 1;
+}
