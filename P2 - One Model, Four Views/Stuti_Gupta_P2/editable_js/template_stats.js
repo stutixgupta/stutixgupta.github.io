@@ -95,7 +95,10 @@ function showStats(data) {
 
 
     <section>
-      <h4 class="price-distribution-title">Price Distribution</h4>
+      <h4 class="price-distribution-title">
+  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNkYzY5NTUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaXJjbGUtZG9sbGFyLXNpZ24taWNvbiBsdWNpZGUtY2lyY2xlLWRvbGxhci1zaWduIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwYXRoIGQ9Ik0xNiA4aC02YTIgMiAwIDEgMCAwIDRoNGEyIDIgMCAxIDEgMCA0SDgiLz48cGF0aCBkPSJNMTIgMThWNiIvPjwvc3ZnPg==" alt="Price Distribution Icon" class="price-icon">
+  Price Distribution
+</h4>
     </section>
   `;
 }
