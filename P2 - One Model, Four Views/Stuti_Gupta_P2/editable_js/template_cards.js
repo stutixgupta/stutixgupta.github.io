@@ -20,7 +20,7 @@ function showCards(data) {
         <p class="card-field"><strong>Contact:</strong> ${r.phone || "—"}</p>
       </div>
     `)
-    .join("");
+    .join(""); // HTML Strings to HTML Block
 
 
   /*HTML*/ 

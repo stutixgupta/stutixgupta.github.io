@@ -2,6 +2,7 @@
 :root {
     --primary-color: rgb(235, 150, 60);
     --secondary-color: rgb(210, 50, 95);
+    --accent-color: #dc6955;
     --background-color: #0f0f10;
     --card-background: #1b1b1b;
     --text-color: #ffffff;
@@ -10,44 +11,55 @@
     --shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
+/* Main Page Setup */
 body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 1rem;
     color: var(--text-color);
     background-color: var(--background-color);
-    background-image: repeating-linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0.03) 0px,
-        rgba(255, 255, 255, 0.03) 1px,
-        transparent 0.5px,
-        transparent 10px
-    );
+    background-image:
+    linear-gradient(rgba(5, 5, 5, 0.93), rgba(5, 5, 5, 0.93)),
+    url("BG.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     line-height: 2;
 }
 
+/* Main Title Hover */
+#site-title {
+  color: white;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Main Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
 }
 
+/* HEADER */
 header {
     text-align: left;
     margin-bottom: 2rem;
     padding: 1rem 0;
 }
 
+/* Main Heading (Forks and Figures) */
 header h1 {
     color: #ffffff;
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 0.5rem;
     border-bottom: 2px solid var(--border-color);
     padding-bottom: 0.5rem;
     line-height: 1.5;
 }
 
+/* Intro Text */
 header p {
     color: var(--subtext-color);
     font-size: 0.9rem;
@@ -55,6 +67,7 @@ header p {
     margin-top: 1.8rem;
 }
 
+/* View Swicth Button Bar */
 .view-selector {
     display: flex;
     gap: 1rem;
@@ -63,6 +76,7 @@ header p {
     width: 100%;
 }
 
+/* Each View Button */
 .view-button {
     flex: 1;
     background: var(--primary-color);
@@ -80,15 +94,18 @@ header p {
     min-width: 200px;
 }
 
+/* Hover Color Change */
 .view-button:hover {
-    background: #dc6955;
+    background: var(--accent-color);
 }
 
+/* Active Button */
 .view-button.active {
     background: var(--secondary-color);
     color: #ffffff;
 }
 
+/* Main Display Box */
 .display-container {
     background: var(--card-background);
     border-radius: 10px;
@@ -97,6 +114,7 @@ header p {
     box-shadow: var(--shadow);
 }
 
+/* Loading Message */
 .loading {
     text-align: center;
     color: #666666;
@@ -104,6 +122,7 @@ header p {
     padding: 2rem;
 }
 
+/* Error Message */
 .error {
     background: #910a3c;
     border: 1px solid #910a3c;
@@ -113,8 +132,7 @@ header p {
     text-align: center;
 }
 
-
-/* UTILITY CLASSES FOR STUDENTS */
+/* UTILITY CLASSES */
 .view-title {
     margin-bottom: 1rem;
     color: var(--text-color);
@@ -126,18 +144,21 @@ header p {
     gap: 15px;
 }
 
+/* Hover Color Change */
 .view-title:hover {
-    color: #dc6955;
+    color: var(--accent-color);
 
     transition: color 0.3s ease;
 }
 
+/* Description Text */
 .view-description {
     color: var(--subtext-color);
     margin-bottom: 2rem;
     font-style: italic;
 }
 
+/* Icons */
 .view-icon {
     width: 30px;
     height: 30px;
@@ -147,11 +168,11 @@ header p {
     transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
+/* Icon Animation */
 .view-title:hover .view-icon {
     transform: scale(1.1);
     opacity: 1;
 }
-
 
 /* CARD VIEW */
 .card-grid {
@@ -160,6 +181,7 @@ header p {
     gap: 1.5rem;
 }
 
+/* Restaurant’s Information Card */
 .restaurant-card {
     border: 1px solid var(--border-color);
     border-radius: 10px;
@@ -168,12 +190,14 @@ header p {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
+/* Lift-Up Animation */
 .restaurant-card:hover {
     transform: translateY(-2px);
     background: #202020;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
 }
 
+/* Restaurant Name */
 .card-name {
     color: var(--secondary-color);
     font-weight: 500;
@@ -181,18 +205,19 @@ header p {
     margin-top: 0.4rem;
 }
 
+/* Hover Color Change */
 .restaurant-card:hover .card-name {
-    color: #dc6955;
+    color: var(--accent-color);
     transition: color 0.3s ease;
 }
 
+/* Information Fields */
 .card-field {
     margin: 0.5rem 0;
     line-height: 2;
     color: var(--subtext-color);
     font-size: 0.9rem;
 }
-
 
 /* TABLE VIEW */
 .restaurant-table {
@@ -203,6 +228,7 @@ header p {
     border-radius: 10px;
 }
 
+/* Cells and Headers */
 .restaurant-table th,
 .restaurant-table td {
     padding: 0.75rem;
@@ -213,27 +239,29 @@ header p {
     color: #cccccc;
 }
 
+/* Left Border - First Column */
 .restaurant-table th:first-child,
 .restaurant-table td:first-child {
     border-left: 1px solid var(--border-color);
 }
 
+/* Header */
 .restaurant-table th {
     background: #202020;
     color: #d2325f;
     font-weight: 500;
 }
 
+/* Row Hover Highlight */
 .restaurant-table tr:hover {
     background: #202020;
-    color: #dc6955;
+    color: var(--accent-color);
 }
 
+/* Row Hover Highlight */
 .restaurant-table tbody tr:hover td {
-    color: #dc6955;
-    cursor: pointer;
+    color: var(--accent-color);
 }
-
 
 /* CATEGORY VIEW */
 .category-section {
@@ -243,6 +271,7 @@ header p {
     overflow: hidden;
 }
 
+/* Category Title Bar */
 .category-header {
     background: var(--secondary-color);
     color: white;
@@ -253,10 +282,12 @@ header p {
     font-size: 1.1rem;
 }
 
+/* Hover Color Change */
 .category-header:hover {
-    background: #dc6955;
+    background: var(--accent-color);
 }
 
+/* Subheader */
 .category-subheader {
     padding: 1.25rem 2rem;
     padding-left: 1.5rem;
@@ -271,6 +302,7 @@ header p {
     font-size: 0.9rem;
 }
 
+/* Restaurant Location */
 .category-item .location {
     font-size: 0.9rem;
     color: var(--subtext-color);
@@ -278,6 +310,7 @@ header p {
     margin-top: 0.3rem;
 }
 
+/* Wrapper for Restaurant List */
 .category-items {
     border: 1px solid var(--border-color);
     border-top: none;
@@ -287,6 +320,7 @@ header p {
     border-right: 1px solid var(--border-color);
 }
 
+/* Each Restaurant Row */
 .category-item {
     padding: 1.25rem 1.5rem;
     border-bottom: 1px solid #333333;
@@ -297,10 +331,12 @@ header p {
     color: #cccccc;
 }
 
+/* Average Rating and Price Information */
 .category-item:last-child {
     border-bottom: none;
 }
 
+/* Hover Highlight */
 .category-avg {
     padding: 0.75rem 1.5rem;
     margin-top: 0.5rem;
@@ -314,17 +350,16 @@ header p {
 
 .category-item:hover {
     background-color: #202020;
-    color: #dc6955;
+    color: var(--accent-color);
     transition: all 0.2s ease;
 }
 
 .category-item:hover .item-name,
 .category-item:hover .item-sub,
 .category-item:hover .item-meta {
-    color: #dc6955;
+    color: var(--accent-color);
 }
  
-
 /* STATISTICS VIEW */
 .stats-grid {
     display: grid;
@@ -332,6 +367,7 @@ header p {
     gap: 1.2rem;
 }
 
+/* Total Statistics */
 .stat-card {
     text-align: center;
     padding: 2rem;
@@ -346,11 +382,13 @@ header p {
     align-items: center;
 } 
 
+/* Lift and Hover Color Change */
 .stat-card:hover {
     transform: translateY(-3px);
-    background-color: #dc6955;
+    background-color: var(--accent-color);
 }
 
+/* Big Numbers in Cards */
 .stat-number {
     font-size: 1.6rem;
     font-weight: 600;
@@ -361,6 +399,7 @@ header p {
     text-align: center;
 }
 
+/* Text Label under Number */
 .stat-label {
     font-size: 1rem;
     opacity: 0.8;
@@ -368,7 +407,6 @@ header p {
     text-align: center;
     margin-top: 1rem;
 }
-
 
 /* PRICE DISTRIBUTION */
 .price-distribution {
@@ -378,6 +416,7 @@ header p {
     font-size: 1rem;
 }
 
+/* Price Distribution Title */
 .price-distribution-title {
     color: #ffffff;
     font-weight: 500;
@@ -390,8 +429,9 @@ header p {
     transition: color 0.3s ease;
 }
 
+/* Hover Color Change and Icon Animation */
 .price-distribution-title:hover {
-    color: #dc6955;
+    color: var(--accent-color);
     transition: color 0.3s ease;
 }
 
@@ -411,6 +451,7 @@ header p {
     margin-top: 1.8rem;
 }
 
+/* Wrapper for Range Buttons and Results */
 .range-selector {
     display: flex;
     gap: 1rem;
@@ -418,6 +459,7 @@ header p {
     margin-bottom: 45px;
 }
 
+/* Individual Price Range Button */
 .range-button {
     flex: 1;
     min-width: 140px;
@@ -426,6 +468,7 @@ header p {
     box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
+/* Results for Price Range */
 .range-result {
     background: var(--card-background);
     border: 1px solid var(--border-color);
@@ -434,12 +477,14 @@ header p {
     color: var(--subtext-color);
 }
 
+/* Restaurants Match Text */
 .range-result .range-count {
     font-weight: 500;
     color: var(--secondary-color);
     margin: 0 0 0.5rem 0;
 }
 
+/* List of Restaurant Names */
 .range-result .range-list {
     margin: 0;
     padding-left: 1.1rem;
@@ -448,11 +493,11 @@ header p {
     line-height: 2.5;
 }
 
+/* Highlight Selected Range Button */
 .range-button.active {
     background-color: var(--secondary-color);
     color: white;
 }
-
 
 /* FONT-WEIGHT CHANGES */
 .restaurant-card strong,
@@ -466,7 +511,6 @@ header p {
     font-weight: 550;
 }
 
-
 /* REFLECTION */
 .reflection-box {
     margin-top: 2rem;
@@ -479,6 +523,7 @@ header p {
     box-shadow: var(--shadow);
 }
 
+/* Reflection Heading and Icon */
 .reflection-header {
     text-align: left;
     font-size: 1.3rem;
@@ -492,8 +537,9 @@ header p {
     transition: color 0.3s ease;
 }
 
+/* Hover Color Change and Icon Animation */
 .reflection-header:hover {
-    color: #dc6955;
+    color: var(--accent-color);
 }
 
 .reflection-box p {
@@ -513,7 +559,6 @@ header p {
     opacity: 1;
 }
 
-
 /* ASSIGNMENT */
 .todo-implementation {
     background: var(--card-background);
@@ -527,6 +572,7 @@ header p {
     font-weight: 400;
 }
 
+/* Project Instructions Box */
 .asst-box {
     margin-top: 2rem;
     padding: 1rem;
@@ -538,6 +584,7 @@ header p {
     box-shadow: var(--shadow);
 }
 
+/* Assignment Section Headers */
 .assignment-header,
 .why-header {
     text-align: left;
@@ -549,9 +596,10 @@ header p {
     gap: 15px;
 }
 
+/* Hover Effects */
 .assignment-header:hover,
 .why-header:hover {
-    color: #dc6955;
+    color: var(--accent-color);
     transition: color 0.3s ease;
 }
 
@@ -561,7 +609,7 @@ header p {
 }
 
 .why-header:hover {
-    color: #dc6955;
+    color: var(--accent-color);
     transition: color 0.3s ease;
 }
 

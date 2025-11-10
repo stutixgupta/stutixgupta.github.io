@@ -16,15 +16,23 @@ function showCategories(data) {
   }, {});
 
   
+  // HTML for each Cuisine Category
   const html = Object.entries(groups)
     .map(([cuisine, items]) => {
       const count = items.length;
+
+
+      // Calculate Average Rating
       const avgRating =
         items.reduce((s, it) => s + (Number(it.rating) || 0), 0) / (count || 1);
+
+
+        // Calculate Average Price
       const avgPrice =
         items.reduce((s, it) => s + (Number(it.price) || 0), 0) / (count || 1);
 
 
+        // List of Restaurants
       const list = items
         .map(
           (it) => `
@@ -39,7 +47,7 @@ function showCategories(data) {
               </div>
             </div>`
         )
-        .join("");
+        .join(""); // Combine Restaurant Entries
 
 
       return `
@@ -52,7 +60,7 @@ function showCategories(data) {
   </section>
 `;
     })
-    .join("");
+    .join(""); // Combine all Cuisine Sections
 
 
   // TODO: Implement this Function

@@ -1,3 +1,4 @@
+// Import Functions
 import showCards from './editable_js/template_cards.js';
 import showCategories from './editable_js/template_category.js';
 import showStats from './editable_js/template_stats.js';
@@ -168,10 +169,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("btn-stats").onclick = () => {
   updateDisplay(showStats(data));
   updateButtonStates("stats");
-
-
-  // Create the Price-Range Buttons
-  initPriceRangeButtons(data);
+  initPriceRangeButtons(data); // Create the Price-Range Buttons
 };
 
 
@@ -184,21 +182,42 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Application Failed to Start:", error);
     showError(error.message);
   }
+
+
+  // Main Title Hover
+  const title = document.getElementById("site-title");
+  const colors = [
+  getComputedStyle(document.documentElement).getPropertyValue("--primary-color").trim(),
+  getComputedStyle(document.documentElement).getPropertyValue("--secondary-color").trim(),
+  "#dc6955"
+];
+let colorIndex = 0;
+
+if (title) {
+  title.addEventListener("mouseenter", () => {
+    title.style.color = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % colors.length; // Color Cycle
+  });
+
+  title.addEventListener("mouseleave", () => {
+    title.style.color = "white"; // Return to White
+  });
+}
 });
 
 
 // REFLECTION
 
-// For this project, I chose the Restaurant Dataset API because it provides detailed information about restaurants, including their names, locations, ratings, prices, cuisines, and contact information. I thought it would be interesting to explore patterns in food options and pricing across different neighborhoods. Especially as a student, I can't think of anything except food these days, and the second thing that makes me happy is a good night’s sleep.
+// For this project, I used the Restaurant Dataset API because it has tons of info about restaurant names, locations, ratings, prices, cuisines, and even contact information. I thought it would be fun to explore patterns in food and pricing across neighborhoods. Especially as a student, I can't think of anything except food these days, and the second thing that makes me happy is a good night’s sleep.
 
-// The Card View emphasizes individual restaurants. Each card displays the main details, including name, cuisine, price, and rating. This view is ideal for those who want to browse and compare restaurants quickly. You can see individual restaurants’ information visually without being overwhelmed by numbers or tables.
+// The Card View shows each restaurant on its own card. You get the basics - name, cuisine, price, rating, all in one place. It’s super easy to scroll through and just see what’s out there without feeling lost in numbers. Perfect for when you just want a quick look at a bunch of restaurants.
 
-// The Table View emphasizes organized data. All restaurants are shown in a structured table format with rows and columns. This view makes it easy to sort, scan, or compare specific details, such as ratings or prices, across many restaurants. It is more practical for finding exact numbers or making detailed comparisons.
+// The Table View puts everything in neat rows and columns. You can see ratings, prices, and other details side by side. It’s great if you want to find something specific or compare a bunch of restaurants at once. A bit more data-heavy, but useful if you like seeing all the numbers laid out.
 
-// The Category View groups restaurants by cuisine type. It emphasizes relationships and patterns within the data, showing which types of food are more common, their average ratings, and prices. This view is helpful for spotting trends, such as which cuisine is most common or which types have higher ratings on average.
+// The Category View groups restaurants by cuisine. You can see which foods are most common, their average ratings, and prices. It’s really helpful for spotting trends, like which cuisines are popular or more expensive, without having to check each restaurant one by one.
 
-// The Statistics View highlights overall patterns and key insights. It displays the total number of restaurants, their average rating and price, the most common cuisine, and the price distribution. This view provides a quick overview of the dataset, helping to identify general trends that are harder to notice in other views, such as the number of restaurants falling under each price range.
+// The Statistics View is all about the big picture. It shows the total number of restaurants, average rating and price, the most common cuisine, and how prices are spread out. Honestly, this view makes it super easy to get a quick sense of the overall patterns without getting lost in the details.
 
-// I believe the Statistics View is the most useful for this dataset because it provides a concise summary of the entire dataset at a glance. If someone wanted to make decisions quickly or understand patterns in pricing, ratings, and cuisine types, this view provides the essential information efficiently.
+// At first, showing the price ranges was a bit tricky because the data was vertical and kind of hard to read. I fixed it by adding clickable buttons for each price range, so you can instantly see how many restaurants fall into each one. It makes the info way easier to follow and way more interactive.
 
-// One challenge I encountered was displaying the price distribution in a clear and interactive way. Initially, the data was presented vertically and was difficult to read. I solved it by creating buttons for each price range under the Statistics View, so users can click and immediately see how many restaurants fall into that range. This made the data more readable and interactive without overwhelming the user.
+// I think Statistics View is the most useful for the dataset because it gives a simple summary of everything at a glance. If someone just wanted to get the main ideas, like which cuisines are popular, which restaurants are expensive, average ratings, overall trends and patterns, this view shows it all without having to dig through every single restaurant.

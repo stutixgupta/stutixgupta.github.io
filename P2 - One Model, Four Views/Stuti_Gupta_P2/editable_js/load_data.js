@@ -38,9 +38,9 @@ function randomPrice(min = 30, max = 1500) {
  * Map an Inspection Score
  */
 function scoreToRating(score) {
-  if (!score && score !== 0) return (3 + Math.random() * 1.5).toFixed(1); // fallback
+  if (!score && score !== 0) return (3 + Math.random() * 1.5).toFixed(1); // Fallback
   const s = Number(score);
-  const r = Math.max(1, Math.min(5, (s / 100) * 4 + 1)); // scale 0->1 to 100->5
+  const r = Math.max(1, Math.min(5, (s / 100) * 4 + 1)); // Scale
   return (Math.round(r * 10) / 10).toFixed(1);
 }
 
