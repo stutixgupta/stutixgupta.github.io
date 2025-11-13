@@ -1,0 +1,573 @@
+/* BASE STYLES - Tried my best to make it look Good :) */
+:root {
+    --primary-color: rgb(235, 150, 60);
+    --secondary-color: rgb(210, 50, 95);
+    --accent-color: #dc6955;
+    --background-color: #0f0f10;
+    --card-background: #1b1b1b;
+    --text-color: #ffffff;
+    --subtext-color: #cccccc;
+    --border-color: #333333;
+    --shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Page Setup */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 1rem;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    background-image:
+    linear-gradient(rgba(5, 5, 5, 0.93), rgba(5, 5, 5, 0.93)),
+    url("BG.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    line-height: 2;
+}
+
+/* Main Title Hover */
+#site-title {
+  color: white;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Main Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* HEADER */
+header {
+    text-align: left;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+}
+
+/* Main Heading (Forks and Figures) */
+header h1 {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Intro Text */
+header p {
+    color: var(--subtext-color);
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-top: 1.8rem;
+}
+
+/* View Swicth Button Bar */
+.view-selector {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Each View Button */
+.view-button {
+    flex: 1;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1.5rem 0;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: all 0.2s ease;
+    text-align: center;
+    min-width: 200px;
+}
+
+/* Hover Color Change */
+.view-button:hover {
+    background: var(--accent-color);
+}
+
+/* Active Button */
+.view-button.active {
+    background: var(--secondary-color);
+    color: #ffffff;
+}
+
+/* Main Display Box */
+.display-container {
+    background: var(--card-background);
+    border-radius: 10px;
+    padding: 2rem;
+    min-height: 400px;
+    box-shadow: var(--shadow);
+}
+
+/* Loading Message */
+.loading {
+    text-align: center;
+    color: #666666;
+    font-style: italic;
+    padding: 2rem;
+}
+
+/* Error Message */
+.error {
+    background: #910a3c;
+    border: 1px solid #910a3c;
+    color: #f05f7d;
+    padding: 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* UTILITY CLASSES */
+.view-title {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Hover Color Change */
+.view-title:hover {
+    color: var(--accent-color);
+
+    transition: color 0.3s ease;
+}
+
+/* Description Text */
+.view-description {
+    color: var(--subtext-color);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+/* Icons */
+.view-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    vertical-align: middle;
+    opacity: 0.9;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Icon Animation */
+.view-title:hover .view-icon {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* CARD VIEW */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Restaurant’s Information Card */
+.restaurant-card {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    background: var(--card-background);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Lift-Up Animation */
+.restaurant-card:hover {
+    transform: translateY(-2px);
+    background: #202020;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+}
+
+/* Restaurant Name */
+.card-name {
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    margin-top: 0.4rem;
+}
+
+/* Hover Color Change */
+.restaurant-card:hover .card-name {
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+/* Information Fields */
+.card-field {
+    margin: 0.5rem 0;
+    line-height: 2;
+    color: var(--subtext-color);
+    font-size: 0.9rem;
+}
+
+/* TABLE VIEW */
+.restaurant-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+/* Cells and Headers */
+.restaurant-table th,
+.restaurant-table td {
+    padding: 0.75rem;
+    text-align: center;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    color: #cccccc;
+}
+
+/* Left Border - First Column */
+.restaurant-table th:first-child,
+.restaurant-table td:first-child {
+    border-left: 1px solid var(--border-color);
+}
+
+/* Header */
+.restaurant-table th {
+    background: #202020;
+    color: #d2325f;
+    font-weight: 500;
+}
+
+/* Row Hover Highlight */
+.restaurant-table tr:hover {
+    background: #202020;
+    color: var(--accent-color);
+}
+
+/* Row Hover Highlight */
+.restaurant-table tbody tr:hover td {
+    color: var(--accent-color);
+}
+
+/* CATEGORY VIEW */
+.category-section {
+    margin-bottom: 2.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Category Title Bar */
+.category-header {
+    background: var(--secondary-color);
+    color: white;
+    padding: 1.25rem 2rem;
+    margin: 0;
+    border-radius: 10px 10px 0 0;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* Hover Color Change */
+.category-header:hover {
+    background: var(--accent-color);
+}
+
+/* Subheader */
+.category-subheader {
+    padding: 1.25rem 2rem;
+    padding-left: 1.5rem;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--subtext-color);
+    background: var(--card-background);
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/* Restaurant Location */
+.category-item .location {
+    font-size: 0.9rem;
+    color: var(--subtext-color);
+    display: block;
+    margin-top: 0.3rem;
+}
+
+/* Wrapper for Restaurant List */
+.category-items {
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+}
+
+/* Each Restaurant Row */
+.category-item {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #cccccc;
+}
+
+/* Average Rating and Price Information */
+.category-item:last-child {
+    border-bottom: none;
+}
+
+/* Hover Highlight */
+.category-avg {
+    padding: 0.75rem 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    line-height: 1.7rem;
+}
+
+.category-item:hover {
+    background-color: #202020;
+    color: var(--accent-color);
+    transition: all 0.2s ease;
+}
+
+.category-item:hover .item-name,
+.category-item:hover .item-sub,
+.category-item:hover .item-meta {
+    color: var(--accent-color);
+}
+ 
+/* STATISTICS VIEW */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+}
+
+/* Total Statistics */
+.stat-card {
+    text-align: center;
+    padding: 2rem;
+    background: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+    max-height: 320px;
+    display: flex;
+    flex-direction: column;
+    line-height: 2.3rem;
+    align-items: center;
+} 
+
+/* Lift and Hover Color Change */
+.stat-card:hover {
+    transform: translateY(-3px);
+    background-color: var(--accent-color);
+}
+
+/* Big Numbers in Cards */
+.stat-number {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0.25rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 0.25rem;
+    width: 120%;
+    text-align: center;
+}
+
+/* Text Label under Number */
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.8;
+    line-height: 1.7rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* PRICE DISTRIBUTION */
+.price-distribution {
+    margin-top: 1.8rem;
+    text-align: center;
+    color: var(--subtext-color);
+    font-size: 1rem;
+}
+
+/* Price Distribution Title */
+.price-distribution-title {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: color 0.3s ease;
+}
+
+/* Hover Color Change and Icon Animation */
+.price-distribution-title:hover {
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+.price-icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s ease;
+    opacity: 0.9;
+}
+
+.price-distribution-title:hover .price-icon {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* REFLECTION */
+.reflection-box {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--card-background);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    line-height: 2;
+    color: #cccccc;
+    box-shadow: var(--shadow);
+}
+
+/* Reflection Heading and Icon */
+.reflection-header {
+    text-align: left;
+    font-size: 1.3rem;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: color 0.3s ease;
+}
+
+/* Hover Color Change and Icon Animation */
+.reflection-header:hover {
+    color: var(--accent-color);
+}
+
+.reflection-box p {
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.reflection-icon {
+    width: 29px;
+    height: 29px;
+    transition: transform 0.2s ease;
+}
+
+.reflection-header:hover .reflection-icon {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* ASSIGNMENT */
+.todo-implementation {
+    background: var(--card-background);
+    border: 2px dashed var(--border-color);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    color: #aaaaaa;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+/* Project Instructions Box */
+.asst-box {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--card-background);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    line-height: 2.5;
+    color: #cccccc;
+    box-shadow: var(--shadow);
+}
+
+/* Assignment Section Headers */
+.assignment-header,
+.why-header {
+    text-align: left;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Hover Effects */
+.assignment-header:hover,
+.why-header:hover {
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+.assignment-header:hover .view-icon {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.why-header:hover {
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+.why-header:hover .view-icon {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* Statistics View - New */
+.chart-section {
+  max-width: 800px;
+  margin: 2em auto;
+  text-align: center;
+}
+
+.chart-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5em;
+  color: #333;
+}
+
+canvas {
+  width: 100%;
+  max-height: 400px;
+}
